@@ -3,7 +3,7 @@ Windows API virtual key codes and mouse input converted from C to C#, as well as
 
 This is useful as a replacement for manually writing out every virtual key code you need to use in your program.
 
-Instead you can simply add this source code to your project to access the Windows API input from user32.dll.
+Instead you can add this source code to your project to access the Windows API input from user32.dll.
 
 If you do not know what this is or how to use it I suggest that you read the source and the official documentation:
 
