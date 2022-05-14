@@ -4,6 +4,7 @@ namespace InputLibrary
     using System;
     using System.Runtime.InteropServices;
     #endregion
+    
     public class Input
     {
         #region Input Test
@@ -13,20 +14,25 @@ namespace InputLibrary
             int LeftMouseButton = input.VK_LBUTTON;         // Assign VK_LBUTTON to a new friendly variable name.
             short LMB = GetAsyncKeyState(LeftMouseButton);      // Get the async key state of the left mouse button.
             bool Toggle = false;        // Create a new toggle.
+            
             if (LMB == LeftMouseButton)      // If the async key state of LMB is equal to VK_LBUTTON
             {
                 bool unused = !Toggle;      // Toggle on or off when left mouse button is pressed
             }
         }
         #endregion
+            
         #region DLL Imports
         [DllImport("user32.dll")]
         public static extern short GetAsyncKeyState(int vKey);      // Determines whether a key is up or down at the time the function is called, and whether the key was pressed after a previous call to GetAsyncKeyState.
+        
         [DllImport("user32.dll")]
         public static extern short GetKeyState(int vKey);       // Retrieves the status of the specified virtual key. The status specifies whether the key is up, down, or toggled (on, off—alternating each time the key is pressed).
+        
         [DllImport("user32.dll")]
         public static extern void mouse_event(uint dwFlags, uint dx, uint dy, uint dwData, UIntPtr dwExtraInfo);        // The mouse_event function synthesizes mouse motion and button clicks.
         #endregion
+            
         #region Mouse Events
         public static uint XBUTTON1 = 0x0001;      //  Set if the first X button was pressed or released. 
         public static uint XBUTTON2 = 0x0002;      //  Set if the second X button was pressed or released.
@@ -50,6 +56,7 @@ namespace InputLibrary
         
         public static uint MOUSEEVENTF_ABSOLUTE = 0x8000;      // The dx and dy parameters contain normalized absolute coordinates. If not set, those parameters contain relative data: the change in position since the last reported position. This flag can be set, or not set, regardless of what kind of mouse or mouse-like device, if any, is connected to the system. For further information about relative mouse motion, see the following Remarks section. 
         #endregion
+            
         #region Keyboard Events
         public int VK_LBUTTON = 0x01;    // Left mouse button
         public int VK_RBUTTON = 0x02;    // Right mouse button
@@ -254,28 +261,38 @@ namespace InputLibrary
         
         public int VK_OEM_CLEAR = 0xFE;     // Clear key
         #endregion
+            
         #region Undefined, Reserved, Unassigned and OEM Specific
         public int VK_UNDEFINED_0 = 0x07;  // Undefined
-        /* public int VK_UNDEFINED_1 = 0x0E-0F;  // Undefined */ // Has errors.
+        
+        /* public int VK_UNDEFINED_1 = 0x0E-0F;  // Undefined */ // Has errors. Use at own risk.
+        
         public int VK_UNDEFINED_2 = 0x3A-40;   // Undefined
         
-        /* public int VK_RESERVED_0 = 0x0A-0B;    // Reserved */ // Has errors.
+        /* public int VK_RESERVED_0 = 0x0A-0B;    // Reserved */ // Has errors. Use at own risk.
+        
         public int VK_RESERVED_1 = 0x5E;     // Reserved
-        /* public int VK_RESERVED_2 = 0xB8-B9; 	// Reserved */ // Has errors.
-        /* public int VK_RESERVED_3 = 0xC1-D7; 	// Reserved */ // Has errors.
+        
+        /* public int VK_RESERVED_2 = 0xB8-B9; 	// Reserved */ // Has errors. Use at own risk.
+        /* public int VK_RESERVED_3 = 0xC1-D7; 	// Reserved */ // Has errors. Use at own risk.
+        
         public int VK_RESERVED_4 = 0xE0; 	// Reserved
         public int VK_NONAME = 0xFC;   // Reserved
         
-        /* public int VK_UNASSIGNED_0 = 0x88-8F;  // Unassigned */ // Has errors.
-        /* public int VK_UNASSIGNED_1 = 0x97-9F;  // Unassigned */ // Has errors.
-        /* public int VK_UNASSIGNED_2 = 0xD8-DA;    // Unassigned */ // Has errors.
+        /* public int VK_UNASSIGNED_0 = 0x88-8F;  // Unassigned */ // Has errors. Use at own risk.
+        /* public int VK_UNASSIGNED_1 = 0x97-9F;  // Unassigned */ // Has errors. Use at own risk.
+        /* public int VK_UNASSIGNED_2 = 0xD8-DA;    // Unassigned */ // Has errors. Use at own risk.
+        
         public int VK_UNASSIGNED_3 = 0xE8;   // Unassigned
         
         public int OEM_0 = 0x92-96;     // OEM specific
         public int OEM_1 = 0xE1;  // OEM specific
-        /* public int OEM_2 = 0xE3-E4;     // OEM specific */ // Has errors.
+        
+        /* public int OEM_2 = 0xE3-E4;     // OEM specific */ // Has errors. Use at own risk.
+        
         public int OEM_3 = 0xE6;  // OEM specific
-        /* public int OEM_4 = 0xE9-F5;     // OEM specific */ // Has errors.
+        
+        /* public int OEM_4 = 0xE9-F5;     // OEM specific */ // Has errors. Use at own risk.
         #endregion
     }
 }
