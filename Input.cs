@@ -256,26 +256,26 @@ namespace InputLibrary
         #endregion
         #region Undefined, Reserved, Unassigned and OEM Specific
         public int VK_UNDEFINED_0 = 0x07;  // Undefined
-        /* public int VK_UNDEFINED_1 = 0x0E-0F;  // Undefined */
+        /* public int VK_UNDEFINED_1 = 0x0E-0F;  // Undefined */ // Has errors.
         public int VK_UNDEFINED_2 = 0x3A-40;   // Undefined
         
-        /* public int VK_RESERVED_0 = 0x0A-0B;    // Reserved */
+        /* public int VK_RESERVED_0 = 0x0A-0B;    // Reserved */ // Has errors.
         public int VK_RESERVED_1 = 0x5E;     // Reserved
-        /* public int VK_RESERVED_2 = 0xB8-B9; 	// Reserved */
-        /* public int VK_RESERVED_3 = 0xC1-D7; 	// Reserved */
+        /* public int VK_RESERVED_2 = 0xB8-B9; 	// Reserved */ // Has errors.
+        /* public int VK_RESERVED_3 = 0xC1-D7; 	// Reserved */ // Has errors.
         public int VK_RESERVED_4 = 0xE0; 	// Reserved
         public int VK_NONAME = 0xFC;   // Reserved
         
-        /* public int VK_UNASSIGNED_0 = 0x88-8F;  // Unassigned */
-        /* public int VK_UNASSIGNED_1 = 0x97-9F;  // Unassigned */
-        /* public int VK_UNASSIGNED_2 = 0xD8-DA;    // Unassigned */
+        /* public int VK_UNASSIGNED_0 = 0x88-8F;  // Unassigned */ // Has errors.
+        /* public int VK_UNASSIGNED_1 = 0x97-9F;  // Unassigned */ // Has errors.
+        /* public int VK_UNASSIGNED_2 = 0xD8-DA;    // Unassigned */ // Has errors.
         public int VK_UNASSIGNED_3 = 0xE8;   // Unassigned
         
         public int OEM_0 = 0x92-96;     // OEM specific
         public int OEM_1 = 0xE1;  // OEM specific
-        /* public int OEM_2 = 0xE3-E4;     // OEM specific */
+        /* public int OEM_2 = 0xE3-E4;     // OEM specific */ // Has errors.
         public int OEM_3 = 0xE6;  // OEM specific
-        /* public int OEM_4 = 0xE9-F5;     // OEM specific */
+        /* public int OEM_4 = 0xE9-F5;     // OEM specific */ // Has errors.
         #endregion
     }
 }
