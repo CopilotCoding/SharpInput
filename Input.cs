@@ -9,57 +9,71 @@ namespace InputLibrary
         #region Input Test
         public void InputTest()
         {
-            global::InputLibrary.Input input = new global::InputLibrary.Input();
-            // Assign VK_LBUTTON to a new friendly variable name.
-            int LeftMouseButton = input.VK_LBUTTON;
-            short LMB = GetAsyncKeyState(LeftMouseButton);
-            bool Toggle = false;
-            if (LMB == LeftMouseButton)
+            global::InputLibrary.Input input = new global::InputLibrary.Input();        // Create a new instance of input.
+            int LeftMouseButton = input.VK_LBUTTON;         // Assign VK_LBUTTON to a new friendly variable name.
+            short LMB = GetAsyncKeyState(LeftMouseButton);      // Get the async key state of the left mouse button.
+            bool Toggle = false;        // Create a new toggle.
+            if (LMB == LeftMouseButton)      // If the async key state of LMB is equal to VK_LBUTTON
             {
-                bool unused = !Toggle;
+                bool unused = !Toggle;      // Toggle on or off when left mouse button is pressed
             }
         }
         #endregion
         #region DLL Imports
         [DllImport("user32.dll")]
-        public static extern short GetAsyncKeyState(int vKey);
+        public static extern short GetAsyncKeyState(int vKey);      // Determines whether a key is up or down at the time the function is called, and whether the key was pressed after a previous call to GetAsyncKeyState.
         [DllImport("user32.dll")]
-        public static extern short GetKeyState(int vKey);
+        public static extern short GetKeyState(int vKey);       // Retrieves the status of the specified virtual key. The status specifies whether the key is up, down, or toggled (on, off—alternating each time the key is pressed).
         [DllImport("user32.dll")]
-        public static extern void mouse_event(uint dwFlags, uint dx, uint dy, uint dwData, UIntPtr dwExtraInfo);
+        public static extern void mouse_event(uint dwFlags, uint dx, uint dy, uint dwData, UIntPtr dwExtraInfo);        // The mouse_event function synthesizes mouse motion and button clicks.
         #endregion
         #region Mouse Events
         public static uint XBUTTON1 = 0x0001;      //  Set if the first X button was pressed or released. 
-        public static uint XBUTTON2 = 0x0002;      //  Set if the second X button was pressed or released. 
+        public static uint XBUTTON2 = 0x0002;      //  Set if the second X button was pressed or released.
+        
         public static uint MOUSEEVENTF_MOVE = 0x0001;      //  Movement occurred. 
+        
         public static uint MOUSEEVENTF_LEFTDOWN = 0x0002;      //  The left button is down. 
         public static uint MOUSEEVENTF_LEFTUP = 0x0004;        // The left button is up. 
+        
         public static uint MOUSEEVENTF_RIGHTDOWN = 0x0008;     //  The right button is down. 
         public static uint MOUSEEVENTF_RIGHTUP = 0x0010;       //  The right button is up. 
+        
         public static uint MOUSEEVENTF_MIDDLEDOWN = 0x0020;    //  The middle button is down. 
         public static uint MOUSEEVENTF_MIDDLEUP = 0x0040;      //  The middle button is up. 
+        
         public static uint MOUSEEVENTF_XDOWN = 0x0080;     //  An X button was pressed. 
         public static uint MOUSEEVENTF_XUP = 0x0100;       //  An X button was released. 
+        
         public static uint MOUSEEVENTF_HWHEEL = 0x01000;   //  The wheel button is tilted. 
-        public static uint MOUSEEVENTF_WHEEL = 0x0800;     //  The wheel has been moved, if the mouse has a wheel. The amount of movement is specified in dwData //  The wheel button is rotated. 
+        public static uint MOUSEEVENTF_WHEEL = 0x0800;     //  The wheel has been moved, if the mouse has a wheel. The amount of movement is specified in dwData //  The wheel button is rotated.
+        
         public static uint MOUSEEVENTF_ABSOLUTE = 0x8000;      // The dx and dy parameters contain normalized absolute coordinates. If not set, those parameters contain relative data: the change in position since the last reported position. This flag can be set, or not set, regardless of what kind of mouse or mouse-like device, if any, is connected to the system. For further information about relative mouse motion, see the following Remarks section. 
         #endregion
         #region Keyboard Events
         public int VK_LBUTTON = 0x01;    // Left mouse button
         public int VK_RBUTTON = 0x02;    // Right mouse button
+        
         public int VK_CANCEL = 0x03;   // Control-break processing
+        
         public int VK_MBUTTON = 0x04;   // Middle mouse button (three-button mouse)
         public int VK_XBUTTON1 = 0x05;   // X1 mouse button
         public int VK_XBUTTON2 = 0x06;     // X2 mouse button
+        
         public int VK_BACK = 0x08;   // BACKSPACE key
         public int VK_TAB = 0x09;   // TAB key
+        
         public int VK_CLEAR = 0x0C;   // CLEAR key
+        
         public int VK_RETURN = 0x0D;   // ENTER key
         public int VK_SHIFT = 0x10;   // SHIFT key
         public int VK_CONTROL = 0x11;   // CTRL key
         public int VK_MENU = 0x12;   // ALT key
+        
         public int VK_PAUSE = 0x13;   // PAUSE key
+        
         public int VK_CAPITAL = 0x14;   // CAPS LOCK key
+        
         public int VK_KANA = 0x15;   // IME Kana mode
         public int VK_HANGUEL = 0x15;   // IME Hanguel mode (maintained for compatibility; use VK_HANGUL)
         public int VK_HANGUL = 0x15;   // IME Hangul mode
@@ -69,20 +83,26 @@ namespace InputLibrary
         public int VK_HANJA = 0x19;   // IME Hanja mode
         public int VK_KANJI = 0x19;     // IME Kanji mode
         public int VK_IME_OFF = 0x1A;   // IME Off
+        
         public int VK_ESCAPE = 0x1B;    // ESC key
+        
         public int VK_CONVERT = 0x1C;   // IME convert
         public int VK_NONCONVERT = 0x1D;    // IME nonconvert
         public int VK_ACCEPT = 0x1E;    // IME accept
         public int VK_MODECHANGE = 0x1F;    // IME mode change request
+        
         public int VK_SPACE = 0x20;     // SPACEBAR
+        
         public int VK_PRIOR = 0x21;     // PAGE UP key
         public int VK_NEXT = 0x22;  // PAGE DOWN key
         public int VK_END = 0x23;   // END key
         public int VK_HOME = 0x24;  // HOME key
+        
         public int VK_LEFT = 0x25;  // LEFT ARROW key
         public int VK_UP = 0x26;    // UP ARROW key
         public int VK_RIGHT = 0x27;     // RIGHT ARROW key
         public int VK_DOWN = 0x28;  // DOWN ARROW key
+        
         public int VK_SELECT = 0x29;    // SELECT key
         public int VK_PRINT = 0x2A;     // PRINT key
         public int VK_EXECUTE = 0x2B;   // EXECUTE key
@@ -90,6 +110,7 @@ namespace InputLibrary
         public int VK_INSERT = 0x2D;    // INS key
         public int VK_DELETE = 0x2E;    // DEL key
         public int VK_HELP = 0x2F;  // HELP key
+        
         public int VK_0 = 0x30;   // 0 key
         public int VK_1 = 0x31;   // 1 key
         public int VK_2 = 0x32;   // 2 key
@@ -100,6 +121,7 @@ namespace InputLibrary
         public int VK_7 = 0x37;     // 7 key
         public int VK_8 = 0x38;     // 8 key
         public int VK_9 = 0x39;  // 9 key
+        
         public int VK_A = 0x41;     // A key
         public int VK_B = 0x42;     // B key
         public int VK_C = 0x43;     // C key
@@ -126,10 +148,12 @@ namespace InputLibrary
         public int VK_X = 0x58;     // X key
         public int VK_Y = 0x59;     // Y key
         public int VK_Z = 0x5A;     // Z key
+        
         public int VK_LWIN = 0x5B;   // Left Windows key (Natural keyboard)
         public int VK_RWIN = 0x5C;   // Right Windows key (Natural keyboard)
         public int VK_APPS = 0x5D;   // Applications key (Natural keyboard)
         public int VK_SLEEP = 0x5F;   // Computer Sleep key
+        
         public int VK_NUMPAD0 = 0x60;   // Numeric keypad 0 key
         public int VK_NUMPAD1 = 0x61;   // Numeric keypad 1 key
         public int VK_NUMPAD2 = 0x62;   // Numeric keypad 2 key
@@ -140,12 +164,14 @@ namespace InputLibrary
         public int VK_NUMPAD7 = 0x67;   // Numeric keypad 7 key
         public int VK_NUMPAD8 = 0x68;   // Numeric keypad 8 key
         public int VK_NUMPAD9 = 0x69;   // Numeric keypad 9 key
+        
         public int VK_MULTIPLY = 0x6A;   // Multiply key
         public int VK_ADD = 0x6B;   // Add key
         public int VK_SEPARATOR = 0x6C;   // Separator key
         public int VK_SUBTRACT = 0x6D;   // Subtract key
         public int VK_DECIMAL = 0x6E;   // Decimal key
         public int VK_DIVIDE = 0x6F;   // Divide key
+        
         public int VK_F1 = 0x70;   // F1 key
         public int VK_F2 = 0x71;   // F2 key
         public int VK_F3 = 0x72;   // F3 key
@@ -170,6 +196,7 @@ namespace InputLibrary
         public int VK_F22 = 0x85;   // F22 key
         public int VK_F23 = 0x86;   // F23 key
         public int VK_F24 = 0x87;   // F24 key
+        
         public int VK_NUMLOCK = 0x90;   // NUM LOCK key
         public int VK_SCROLL = 0x91;   // SCROLL LOCK key
         public int VK_LSHIFT = 0xA0;   // Left SHIFT key
@@ -178,6 +205,7 @@ namespace InputLibrary
         public int VK_RCONTROL = 0xA3;   // Right CONTROL key
         public int VK_LMENU = 0xA4;   // Left MENU key
         public int VK_RMENU = 0xA5;   // Right MENU key
+        
         public int VK_BROWSER_BACK = 0xA6;   // Browser Back key
         public int VK_BROWSER_FORWARD = 0xA7;   // Browser Forward key
         public int VK_BROWSER_REFRESH = 0xA8;   // Browser Refresh key
@@ -185,17 +213,21 @@ namespace InputLibrary
         public int VK_BROWSER_SEARCH = 0xAA;   // Browser Search key
         public int VK_BROWSER_FAVORITES = 0xAB;   // Browser Favorites key
         public int VK_BROWSER_HOME = 0xAC;   // Browser Start and Home key
+        
         public int VK_VOLUME_MUTE = 0xAD;   // Volume Mute key
         public int VK_VOLUME_DOWN = 0xAE;   // Volume Down key
         public int VK_VOLUME_UP = 0xAF;   // Volume Up key
+        
         public int VK_MEDIA_NEXT_TRACK = 0xB0; 	// Next Track key
         public int VK_MEDIA_PREV_TRACK = 0xB1; 	// Previous Track key
         public int VK_MEDIA_STOP = 0xB2;   // Stop Media key
         public int VK_MEDIA_PLAY_PAUSE = 0xB3;   // Play/Pause Media key
+        
         public int VK_LAUNCH_MAIL = 0xB4;   // Start Mail key
         public int VK_LAUNCH_MEDIA_SELECT = 0xB5;   // Select Media key
         public int VK_LAUNCH_APP1 = 0xB6;   // Start Application 1 key
         public int VK_LAUNCH_APP2 = 0xB7;   // Start Application 2 key
+        
         public int VK_OEM_1 = 0xBA;   // Used for miscellaneous characters; it can vary by keyboard. For the US standard keyboard, the ';:' key
         public int VK_OEM_PLUS = 0xBB;   // For any country/region, the '+' key
         public int VK_OEM_COMMA = 0xBC;   // For any country/region, the ',' key
@@ -209,6 +241,7 @@ namespace InputLibrary
         public int VK_OEM_7 = 0xDE;   // Used for miscellaneous characters; it can vary by keyboard. For the US standard keyboard, the 'single-quote/double-quote' key
         public int VK_OEM_8 = 0xDF;   // Used for miscellaneous characters; it can vary by keyboard.
         public int VK_OEM_102 = 0xE2;   // The <> keys on the US standard keyboard, or the \\| key on the non-US 102-key keyboard
+        
         public int VK_PROCESSKEY = 0xE5;   // IME PROCESS key
         public int VK_PACKET = 0xE7;   // Used to pass Unicode characters as if they were keystrokes. The VK_PACKET key is the low word of a 32-bit Virtual Key value used for non-keyboard input methods. For more information, see Remark in KEYBDINPUT, SendInput, WM_KEYDOWN, and WM_KEYUP
         public int VK_ATTN = 0xF6;   // Attn key
@@ -218,22 +251,26 @@ namespace InputLibrary
         public int VK_PLAY = 0xFA;   // Play key
         public int VK_ZOOM = 0xFB;   // Zoom key
         public int VK_PA1 = 0xFD;   // PA1 key
+        
         public int VK_OEM_CLEAR = 0xFE;     // Clear key
         #endregion
         #region Undefined, Reserved, Unassigned and OEM Specific
         public int VK_UNDEFINED_0 = 0x07;  // Undefined
         /* public int VK_UNDEFINED_1 = 0x0E-0F;  // Undefined */
         public int VK_UNDEFINED_2 = 0x3A-40;   // Undefined
+        
         /* public int VK_RESERVED_0 = 0x0A-0B;    // Reserved */
         public int VK_RESERVED_1 = 0x5E;     // Reserved
         /* public int VK_RESERVED_2 = 0xB8-B9; 	// Reserved */
         /* public int VK_RESERVED_3 = 0xC1-D7; 	// Reserved */
         public int VK_RESERVED_4 = 0xE0; 	// Reserved
         public int VK_NONAME = 0xFC;   // Reserved
+        
         /* public int VK_UNASSIGNED_0 = 0x88-8F;  // Unassigned */
         /* public int VK_UNASSIGNED_1 = 0x97-9F;  // Unassigned */
         /* public int VK_UNASSIGNED_2 = 0xD8-DA;    // Unassigned */
         public int VK_UNASSIGNED_3 = 0xE8;   // Unassigned
+        
         public int OEM_0 = 0x92-96;     // OEM specific
         public int OEM_1 = 0xE1;  // OEM specific
         /* public int OEM_2 = 0xE3-E4;     // OEM specific */
