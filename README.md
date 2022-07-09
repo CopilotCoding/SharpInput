@@ -7,7 +7,7 @@ Instead you can add this source code to your project to access the Windows API i
 
 I made sure to keep all the original comments from microsoft in place, as well as to include every single mouse and keyboard input code.
 
-If you do not know what this is or how to use it I suggest that you read the source and the official documentation:
+If you do not know what this is or how to use it I suggest that you read the source and documentation:
 
 # Virtual key codes:
 https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
