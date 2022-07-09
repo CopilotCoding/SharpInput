@@ -14,6 +14,7 @@ https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
 
 # Mouse events:
 https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-mouse_event
-
+# .NET Platform invoke wiki:
+https://pinvoke.net/
 # Win32 API:
 https://docs.microsoft.com/en-us/windows/win32/
