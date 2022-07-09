@@ -1,5 +1,5 @@
-## CSharpInputLibrary
-Windows API virtual key codes and mouse input converted from C to C#, as well as a few other useful functions.
+## InputSharp
+This source file contains windows API virtual key codes and mouse event flags converted from C to C#, as well as some platform invokes.
 
 This is useful as a replacement for manually writing out every virtual key code you need to use in your program.
 
