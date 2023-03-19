@@ -18,3 +18,7 @@ https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-mouse_even
 https://pinvoke.net/
 # Win32 API:
 https://docs.microsoft.com/en-us/windows/win32/
+
+# To do:
+
+Add keyboard event and sendinput
