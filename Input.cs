@@ -264,7 +264,15 @@ namespace Input
 
         /*  OEM_4 = 0xE9-F5,     // OEM specific */ // Has errors. Use at own risk.
     }
-
+    
+    public class Flags
+    {      
+        const uint KEYEVENTF_EXTENDEDKEY = 0x0001;
+        const uint KEYEVENTF_KEYUP = 0x0002;
+        const uint KEYEVENTF_SCANCODE = 0x0008;
+        const uint KEYEVENTF_UNICODE = 0x0004;       
+    }
+    
     public class PI
     {
         [DllImport("user32.dll")]
@@ -275,6 +283,9 @@ namespace Input
 
         [DllImport("user32.dll")]
         public static extern void mouse_event(UInt32 dwFlags, UInt32 dx, UInt32 dy, UInt32 dwData, UIntPtr dwExtraInfo); // The mouse_event function synthesizes mouse motion and button clicks.
+        
+        [DllImport("user32.dll")]
+        public static extern void keybd_event(Byte bVk, Byte bScan, UInt32 dwFlags, UIntPtr dwExtraInfo);
     }
 
     public class Test
