@@ -11,9 +11,14 @@ If you do not know what this is or how to use it I suggest that you read the sou
 
 # Virtual key codes:
 https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
-
+# Keyboard scancodes
+https://www.win.tue.nl/~aeb/linux/kbd/scancodes
 # Mouse events:
 https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-mouse_event
+# Keyboard events:
+https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-keybd_event
+# Send Input:
+https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-sendinput
 # .NET Platform invoke wiki:
 https://pinvoke.net/
 # Win32 API:
@@ -21,4 +26,4 @@ https://docs.microsoft.com/en-us/windows/win32/
 
 # To do:
 
-sendinput
+implement sendinput
