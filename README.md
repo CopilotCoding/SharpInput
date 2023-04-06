@@ -21,4 +21,4 @@ https://docs.microsoft.com/en-us/windows/win32/
 
 # To do:
 
-Add keyboard event and sendinput
+sendinput
